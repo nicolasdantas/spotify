@@ -1,37 +1,29 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import {Link} from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    title: {
-        flexGrow: 0.1,
-    },
-}));
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 export default function ButtonAppBar() {
-    const classes = useStyles();
-
-    return (
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        <Link to="/albums">Albums</Link>
-                    </Typography>
-                    <Typography variant="h6" className={classes.title}>
-                        <Link to="/create-album">Create an album</Link>
-                    </Typography>
-                    <Typography variant="h6" className={classes.title}>
-                        <Link to="/add-songs">Add songs</Link>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-        </div>
-    );
+  return (
+    <div className="navbar">
+      <AppBar position="static">
+        <Toolbar style={{ display: "flex", justifyContent: "center" }}>
+          <Typography variant="h6">
+            <Link to="/" style={{ color: "white", marginRight: "20px" }}>
+              Albums
+            </Link>
+          </Typography>
+          <Typography variant="h6">
+            <Link
+              to="/create-album"
+              style={{ color: "white", marginLeft: "20px" }}
+            >
+              Create an album
+            </Link>
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
